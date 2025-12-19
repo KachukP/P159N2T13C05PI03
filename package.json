@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --dist-dir build --public-url /p159n2t13c05pi03",
+    "build": "parcel build src/index.html --dist-dir build --public-url /P159N2T13C05PI03",
     "deploy": "gh-pages -d build",
     "bude": "npm run build && npm run deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
