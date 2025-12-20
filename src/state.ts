@@ -10,8 +10,7 @@ export const EstadoGame = {
         puntosJugador: 0,
         puntosCPU: 0,
     },
-
-    setJugada(jugada: Jugada) {
+    setJugada(jugada: Jugada){
         this.data.jugador = jugada;
         this.data.computadora = this.jugadaRandom();
         this.data.resultado = this.calcularResultado();
@@ -19,21 +18,18 @@ export const EstadoGame = {
         if (this.data.resultado === "ganaste") this.data.puntosJugador++;
         if (this.data.resultado === "perdiste") this.data.puntosCPU++;
     },
-
-    hayGanadorFinal() {
+    hayGanadorFinal(){
         return (
             this.data.puntosJugador === 2 ||
             this.data.puntosCPU === 2
         );
     },
-
-    ganadorFinal() {
+    ganadorFinal(){
         if (this.data.puntosJugador === 2) return "ganaste";
         if (this.data.puntosCPU === 2) return "perdiste";
         return null;
     },
-
-    reset() {
+    reset(){
         this.data = {
             jugador: null,
             computadora: null,
@@ -43,27 +39,23 @@ export const EstadoGame = {
             puntosCPU: 0,
         };
     },
-
-    jugadaRandom(): Jugada {
+    jugadaRandom():Jugada{
         const opciones: Jugada[] = ["piedra", "papel", "tijera"];
         return opciones[Math.floor(Math.random() * opciones.length)];
     },
-
-    calcularResultado(): Resultado {
+    calcularResultado():Resultado{
         const { jugador, computadora } = this.data;
         if (jugador === computadora) return "empate";
-
         if (
         (jugador === "piedra" && computadora === "tijera") ||
         (jugador === "papel" && computadora === "piedra") ||
         (jugador === "tijera" && computadora === "papel")
-        ) {
+        ){
             return "ganaste";
         };
         return "perdiste";
     },
-
-    ObtenerEstado() {
+    ObtenerEstado(){
         return this.data;
     },
 };

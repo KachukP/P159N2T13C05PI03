@@ -2,8 +2,8 @@ import { goTo } from "../../router";
 
 customElements.define(
     "welcome-page",
-    class extends HTMLElement {
-        connectedCallback() {
+    class extends HTMLElement{
+        connectedCallback(){
             this.innerHTML = `
                 <div class="page">
                     <h1>Bienvenidos</h1>

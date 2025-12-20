@@ -3,8 +3,8 @@ import "../../components/score-board";
 
 customElements.define(
     "play-page",
-    class extends HTMLElement {
-        connectedCallback() {
+    class extends HTMLElement{
+        connectedCallback(){
             this.innerHTML = `
                 <div class="page">
                     <h2>Elegí tu jugada</h2>

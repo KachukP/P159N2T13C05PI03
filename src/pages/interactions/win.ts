@@ -3,15 +3,14 @@ import { EstadoGame } from "../../state";
 
 customElements.define(
     "win-page",
-    class extends HTMLElement {
-        connectedCallback() {
+    class extends HTMLElement{
+        connectedCallback(){
             this.innerHTML = `
                 <h1>🎉 Ganaste</h1>
                 <result-message></result-message>
                 <button>Volver a jugar</button>
             `;
-
-            this.querySelector("button")!.addEventListener("click", () => {
+            this.querySelector("button")!.addEventListener("click",()=>{
                 EstadoGame.reset();
                 goTo("/");
             });

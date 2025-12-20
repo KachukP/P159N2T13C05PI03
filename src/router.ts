@@ -5,7 +5,7 @@ import "./pages/interactions/win";
 import "./pages/interactions/lose";
 import "./pages/interactions/tie";
 
-const routes: Record<string, string> = {
+const routes: Record<string, string>={
     "/": "welcome-page",
     "/play": "play-page",
     "/round": "round-page",
@@ -13,13 +13,11 @@ const routes: Record<string, string> = {
     "/lose": "lose-page",
     "/tie": "tie-page",
 };
-
-export function goTo(path: string) {
+export function goTo(path: string){
     history.pushState({}, "", path);
     renderRoute(path);
 };
-
-function renderRoute(path: string) {
+function renderRoute(path: string){
     const app = document.getElementById("app");
     if (!app) return;
     app.innerHTML = "";
@@ -28,8 +26,7 @@ function renderRoute(path: string) {
         app.appendChild(document.createElement(tag));
     };
 };
-
-export function initRouter() {
+export function initRouter(){
     renderRoute(location.pathname);
-    window.onpopstate = () => renderRoute(location.pathname);
+    window.onpopstate=()=>renderRoute(location.pathname);
 };
