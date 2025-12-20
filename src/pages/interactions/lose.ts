@@ -11,8 +11,8 @@ customElements.define(
             `;
 
             this.querySelector("button")!.addEventListener("click", () => {
-                EstadoGame.reset();   // ← limpia el marcador
-                goTo("/");            // ← vuelve a welcome
+                EstadoGame.reset();
+                goTo("/");
             });
         };
     },
